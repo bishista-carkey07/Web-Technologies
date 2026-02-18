@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-com2 - Cart</title>
+    <link rel="stylesheet" href="ecom2.css">
+    <style>
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #333;
+            color: white;
+        }
+
+        .actions button {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+        .cart-controls {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cart-controls button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-transform: uppercase; letter-spacing: 3px;">Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 style="color: navy; border-bottom: 2px solid #333; padding-bottom: 10px;">Your Items</h2>
+
+            <div id="empty-cart-msg" style="display: none; text-align: center; padding: 20px;">
+                <p>Your cart is empty.</p>
+                <a href="products.html"
+                    style="background-color: #6c757d; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">Start
+                    Shopping</a>
+            </div>
+
+            <div id="cart-content">
+                <table id="cart-table" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-body">
+                        <!-- Items will be injected here -->
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style="text-align: right; font-weight: bold;">Total Amount:</td>
+                            <td colspan="2" style="font-weight: bold; color: green;" id="cart-total">$0.00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="cart-controls" style="display: flex; justify-content: space-between;">
+                    <form action="products.html">
+                        <button type="submit" style="background-color: #6c757d; color: white;">Continue
+                            Shopping</button>
+                    </form>
+                    <form action="checkout.html">
+                        <button type="submit" style="background-color: #28a745; color: white;">Proceed to
+                            Checkout</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        window.onload = function () {
+            const cartItems = JSON.parse(localStorage.getItem('cart_items')) || [];
+            const cartContent = document.getElementById('cart-content');
+            const emptyMsg = document.getElementById('empty-cart-msg');
+            const cartBody = document.getElementById('cart-body');
+            const cartTotal = document.getElementById('cart-total');
+
+            if (cartItems.length === 0) {
+                cartContent.style.display = 'none';
+                emptyMsg.style.display = 'block';
+            } else {
+                cartContent.style.display = 'block';
+                emptyMsg.style.display = 'none';
+
+                let html = '';
+                let totalAmount = 0;
+
+                cartItems.forEach((item, index) => {
+                    html += `
+                        <tr>
+                            <td style="font-weight: bold;">${item.name}</td>
+                            <td>${item.price}</td>
+                            <td>${item.quantity}</td>
+                            <td>${item.total}</td>
+                            <td class="actions">
+                                <button onclick="removeItem(${index})" style="background-color: #dc3545; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px;">Remove</button>
+                            </td>
+                        </tr>
+                    `;
+                    totalAmount += parseFloat(item.total.replace('$', ''));
+                });
+
+                cartBody.innerHTML = html;
+                cartTotal.innerText = '$' + totalAmount.toFixed(2);
+            }
+        };
+
+        function removeItem(index) {
+            let cart = JSON.parse(localStorage.getItem('cart_items')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('cart_items', JSON.stringify(cart));
+            location.reload();
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 E-com2. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

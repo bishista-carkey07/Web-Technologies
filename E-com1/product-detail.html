@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-com1 - Gadget A</title>
+</head>
+
+<body>
+    <header>
+        <h1>Product Details</h1>
+        <nav>
+            <ul>
+                <li><a href="experiment2.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <header>
+                <h2>Smartphone</h2>
+            </header>
+            <figure>
+                <img src="../assets/smartphone.jpg" alt="Smartphone" width="300">
+                <figcaption>Front view of Smartphone</figcaption>
+            </figure>
+
+            <section>
+                <h3>Description</h3>
+                <p>This is a detailed description of Gadget A. It has many features and is very useful.</p>
+                <p>Price: <strong>$50.00</strong></p>
+            </section>
+
+            <section>
+                <h3>Order Now</h3>
+                <form action="cart.html" method="get">
+                    <label for="qty">Quantity:</label>
+                    <input type="number" id="qty" name="qty" min="1" value="1">
+                    <br><br>
+                    <fieldset>
+                        <legend>Options</legend>
+                        <label><input type="radio" name="color" value="red"> Red</label>
+                        <label><input type="radio" name="color" value="blue"> Blue</label>
+                    </fieldset>
+                    <br>
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-com1. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

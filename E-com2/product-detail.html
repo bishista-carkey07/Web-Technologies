@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-com2 - Gadget A</title>
+    <link rel="stylesheet" href="ecom2.css">
+    <style>
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 60px;
+        }
+
+        article {
+            display: flex;
+            gap: 20px;
+        }
+
+        figure {
+            flex: 1;
+            margin: 0;
+        }
+
+        figure img {
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .details {
+            flex: 2;
+        }
+
+        form {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-transform: uppercase; letter-spacing: 3px;">Product Details</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <article>
+            <figure>
+                <img src="https://via.placeholder.com/300" alt="Gadget A">
+                <figcaption style="font-style: italic; text-align: center; margin-top: 5px;">Front view of Gadget A
+                </figcaption>
+            </figure>
+
+            <div class="details">
+                <h2 style="color: navy; margin-top: 0;">Gadget A</h2>
+                <p>This is a detailed description of Gadget A. It has many features and is very useful.</p>
+                <p>Price: <strong style="color: green; font-size: 1.2em;">$50.00</strong></p>
+
+                <h3 style="border-bottom: 1px solid #ccc;">Order Now</h3>
+                <form onsubmit="addToCart(event)">
+                    <label for="qty">Quantity:</label>
+                    <input type="number" id="qty" name="qty" min="1" value="1" style="width: 50px; padding: 5px;">
+                    <br><br>
+                    <fieldset style="border: 1px solid #ccc; padding: 10px;">
+                        <legend>Options</legend>
+                        <label><input type="radio" name="color" value="red"> Red</label>
+                        <label><input type="radio" name="color" value="blue"> Blue</label>
+                    </fieldset>
+                    <br>
+                    <button type="submit"
+                        style="background-color: #ff9800; color: white; border: none; padding: 10px 20px; cursor: pointer; border-radius: 5px; font-size: 16px;">Add
+                        to Cart</button>
+                </form>
+            </div>
+        </article>
+    </main>
+
+    <script>
+        function addToCart(event) {
+            event.preventDefault();
+            const qty = document.getElementById('qty').value;
+            const price = 50.00;
+            const total = (price * qty).toFixed(2);
+
+            const item = {
+                name: "Gadget A",
+                price: "$" + price.toFixed(2),
+                quantity: qty,
+                total: "$" + total
+            };
+
+            // Save to localStorage
+            let cart = JSON.parse(localStorage.getItem('cart_items')) || [];
+            cart.push(item);
+            localStorage.setItem('cart_items', JSON.stringify(cart));
+
+            // Redirect to cart
+            window.location.href = 'cart.html';
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2024 E-com2. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMaster - Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        #hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            padding: 50px 0;
+            margin-bottom: 30px;
+            border-radius: 10px;
+        }
+
+        #featured-products {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #featured-products article {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 45%;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <nav
+        style="background: #f0f0f0; padding: 10px; border-bottom: 1px solid #ccc; font-family: sans-serif; margin-bottom: 20px;">
+        <strong>Experiments:</strong>
+        <a href="../index.html">Main Menu</a> |
+        <a href="../personal-site/experiment1.html">Exp 1</a> |
+        <a href="../E-com1/experiment2.html">Exp 2</a> |
+        <a href="../personal-site/experiment3.html">Exp 3</a> |
+        <a href="experiment4.html" style="font-weight: bold;">Exp 4</a>
+    </nav>
+    <header>
+        <h1 style="font-size: 2.5rem; text-shadow: 2px 2px 4px #000000;">ShopMaster</h1>
+        <nav>
+            <ul>
+                <li><a href="experiment4.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <h2>Welcome to the Best Online Store</h2>
+            <p>Find the best products at the best prices.</p>
+        </section>
+
+        <section id="featured-products">
+            <article>
+                <img src="../assets/smartphone.jpg" alt="Smartphone"
+                    style="width: 100%; max-width: 250px; border-radius: 5px;">
+                <h3>Smartphone X</h3>
+                <p>The smartest phone you'll ever own.</p>
+                <button>View Details</button>
+            </article>
+            <article>
+                <img src="../assets/laptop.jpg" alt="Laptop" style="width: 100%; max-width: 250px; border-radius: 5px;">
+                <h3>Pro Laptop</h3>
+                <p>Power and portability combined.</p>
+                <button>View Details</button>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ShopMaster. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

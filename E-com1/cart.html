@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-com1 - Cart</title>
+</head>
+
+<body>
+    <header>
+        <h1>Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="experiment2.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Your Items</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gadget A</td>
+                        <td>$50.00</td>
+                        <td>2</td>
+                        <td>$100.00</td>
+                        <td>
+                            <form action="cart.html">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total Amount</td>
+                        <td colspan="2">$100.00</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <form action="checkout.html">
+                <button type="submit" formaction="products.html">Continue Shopping</button>
+                <button type="submit">Proceed to Checkout</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 E-com1. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

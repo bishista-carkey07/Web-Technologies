@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopMaster - Shopping Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Your Shopping Cart</h1>
+        <nav>
+            <ul>
+                <li><a href="experiment4.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Review Your Items</h2>
+            <table border="1" cellpadding="10" cellspacing="0" width="80%">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Smartphone X</td>
+                        <td>$699.99</td>
+                        <td>1</td>
+                        <td>$699.99</td>
+                        <td>
+                            <form action="cart.html">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Wireless Headphones</td>
+                        <td>$199.99</td>
+                        <td>2</td>
+                        <td>$399.98</td>
+                        <td>
+                            <form action="cart.html">
+                                <button type="submit">Remove</button>
+                            </form>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3" align="right"><strong>Grand Total:</strong></td>
+                        <td colspan="2"><strong>$1099.97</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+            <br>
+            <button>Proceed to Checkout</button>
+            <button>Continue Shopping</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ShopMaster. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
