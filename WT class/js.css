@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #1c0a40;
+}
+
+/* Top Text */
+.tagline {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+/* Calculator Card */
+.calculator {
+    background: #2b2b3d;
+    padding: 20px;
+    border-radius: 20px;
+    width: 320px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* Display */
+.display {
+    width: 100%;
+    height: 70px;
+    background: #111;
+    color: white;
+    font-size: 30px;
+    text-align: right;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    overflow-x: auto;
+}
+
+/* Button Grid */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    height: 60px;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Number Buttons */
+.number {
+    background: #4e4ef7;
+    color: white;
+}
+
+/* Operator Buttons */
+.operator {
+    background: #ff9f43;
+    color: white;
+}
+
+/* Clear Button */
+.clear {
+    background: #d50000;
+    color: white;
+}
+
+/* FULL WIDTH Equal Button */
+.equal {
+    background: #00c853;
+    color: white;
+    grid-column: span 4; /* Full width */
+}
